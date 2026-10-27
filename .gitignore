@@ -1,0 +1,11 @@
+target/
+data/
+work/
+*.log
+database.properties
+report-assets/
+screenshots/
+NutriTrack_Project_Report.pdf
+CUSTOM-ENTRY-TEST-RESULTS.json
+HTTP-TEST-RESULTS.json
+JAVAFX-TEST-RESULTS.txt

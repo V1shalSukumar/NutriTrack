@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-22T17:04:46.782Z",
+  "title": "Design System: NutriTrack",
+  "extensions": {
+    "colorMeta": {
+      "green": {
+        "role": "primary",
+        "displayName": "Forest green"
+      },
+      "soft": {
+        "role": "neutral",
+        "displayName": "Pale grey surface"
+      }
+    },
+    "shadows": [
+      {
+        "name": "selected-login-role",
+        "value": "0 1px 3px #0002",
+        "purpose": "Selected role surface only."
+      }
+    ],
+    "motion": [],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1100px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      }
+    ],
+    "focus": {
+      "value": "2px solid var(--green)",
+      "outlineOffset": "4px"
+    },
+    "provenance": {
+      "source": "src/main/webapp/assets/app.css",
+      "authority": [
+        "PRODUCT.md",
+        ".impeccable/surfaces/portal.md",
+        "User-supplied report pages 7–9"
+      ],
+      "visuallyReviewed": [
+        "screenshots/desktop.png",
+        "screenshots/mobile.png"
+      ],
+      "otherCapturesRecorded": [
+        "screenshots/log-meal.png",
+        "screenshots/weekly.png"
+      ],
+      "generatedRasterAssets": [],
+      "detector": "Unavailable: helper engine not installed",
+      "reportedImplementedFixes": [
+        "Mobile minimum-zero grid sizing",
+        "Table group totals alignment"
+      ]
+    }
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary form or navigation action.",
+      "html": "<button class=\"ds-primary\">Log a meal</button>",
+      "css": ".ds-primary{font-family:\"Segoe UI\",Arial,sans-serif;background:var(--green,#216d4f);color:var(--white,#fff);border:1px solid transparent;border-radius:5px;padding:9px 15px;font-size:12px;font-weight:600;cursor:pointer}.ds-primary:hover{background:#18563e}.ds-primary:focus-visible{outline:2px solid var(--green,#216d4f);outline-offset:4px}.ds-primary:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action with outlined surface.",
+      "html": "<button class=\"ds-secondary\">Export CSV</button>",
+      "css": ".ds-secondary{font-family:\"Segoe UI\",Arial,sans-serif;background:white;color:var(--ink,#202722);border:1px solid var(--line,#e0e3dc);border-radius:5px;padding:9px 15px;font-size:12px;font-weight:600;cursor:pointer}.ds-secondary:hover{background:#edf1e9}.ds-secondary:focus-visible{outline:2px solid var(--green,#216d4f);outline-offset:4px}.ds-secondary:disabled{opacity:.45;cursor:not-allowed}"
+    },
+    {
+      "name": "Text field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Stacked label and field.",
+      "html": "<label class=\"ds-label\">Food name<input class=\"ds-input\" placeholder=\"Search foods\"></label>",
+      "css": ".ds-label{font-family:\"Segoe UI\",Arial,sans-serif;display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:600;color:var(--ink,#202722)}.ds-input{font-family:\"Segoe UI\",Arial,sans-serif;padding:9px 10px;border:1px solid var(--line,#e0e3dc);border-radius:5px;background:white;color:var(--ink,#202722);font-size:13px;caret-color:var(--green,#216d4f)}.ds-input::placeholder{color:#687064}.ds-input:focus-visible{outline:2px solid var(--green,#216d4f);outline-offset:4px}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-active",
+      "description": "Grey navigation with green active item.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-active\" href=\"#dashboard\">Dashboard</a><a href=\"#log\">Log meal</a></nav>",
+      "css": ".ds-nav{font-family:\"Segoe UI\",Arial,sans-serif;display:grid;gap:4px;background:var(--soft,#f4f5f2);padding:18px}.ds-nav a{padding:9px 11px;color:var(--ink,#202722);text-decoration:none;border-radius:5px;font-size:13px}.ds-nav a:hover{background:#e6ebe4}.ds-nav a.ds-active{background:var(--green,#216d4f);color:white;font-weight:600}.ds-nav a:focus-visible{outline:2px solid var(--green,#216d4f);outline-offset:4px}"
+    },
+    {
+      "name": "Panel",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Bordered surface for compact data.",
+      "html": "<section class=\"ds-card\"><h2>Daily summary</h2><p>Review your logged meals.</p></section>",
+      "css": ".ds-card{font-family:\"Segoe UI\",Arial,sans-serif;border:1px solid var(--line,#e0e3dc);border-radius:var(--radius,8px);padding:22px;background:white;color:var(--ink,#202722);font-size:14px;line-height:1.55}.ds-card h2{font-size:14px;font-weight:650;margin:0 0 16px}.ds-card p{margin:0}"
+    },
+    {
+      "name": "Health score",
+      "kind": "custom",
+      "description": "Large score with quiet denominator.",
+      "html": "<div class=\"ds-score\">68<span> / 100</span></div>",
+      "css": ".ds-score{font-family:\"Segoe UI\",Arial,sans-serif;font-size:64px;font-weight:650;color:var(--green,#216d4f);line-height:1.3;letter-spacing:-2px}.ds-score span{font-size:15px;letter-spacing:0;font-weight:400;color:var(--muted,#626860)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The NutriTrack reference portal",
+    "overview": "Preserve the supplied NutriTrack report's interface: a pale grey sidebar, white panels, dark green controls, compact tables, nutrient cards and weekly bars. The visual system is quiet and utilitarian, with borders and tonal surfaces organizing dense nutritional data.",
+    "keyCharacteristics": [
+      "Grey navigation and recommendation surfaces",
+      "Green actions and progress indicators",
+      "Compact system typography and tabular numbers"
+    ],
+    "rules": [
+      {
+        "name": "The Reference Rule",
+        "body": "Preserve the grey, white and green palette established by the supplied report.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do preserve the user's reference palette and restrained panel layout.",
+      "Do keep numeric columns right-aligned and totals visibly grouped.",
+      "Do use flexible minimum-zero grid tracks and horizontally scrollable tables on narrow screens."
+    ],
+    "donts": [
+      "Don't introduce a new visual identity, decorative illustrations or generated image assets.",
+      "Don't replace the mobile scrollable navigation with a different interaction without a product decision.",
+      "Don't claim automated detector verification; its helper engine was unavailable."
+    ]
+  }
+}

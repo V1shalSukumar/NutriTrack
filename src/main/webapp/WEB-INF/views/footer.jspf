@@ -1,0 +1,2 @@
+<%@ page pageEncoding="UTF-8" %>
+</div><footer>NutriTrack · Indian portions, everyday nutrition <span>Illustrative nutrition data for academic demonstration.</span></footer></main><script src="${pageContext.request.contextPath}/assets/app.js"></script></body></html>

@@ -1,0 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" %><%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title} · NutriTrack</title><link rel="stylesheet" href="${pageContext.request.contextPath}/assets/app.css"></head><body>
+<aside><div class="brand">NutriTrack</div><p class="tagline">Meal and nutrient tracker</p><div class="nav-label">${sessionScope.user.admin ? 'ADMIN PORTAL' : 'USER PORTAL'}</div><nav aria-label="Main navigation">
+<c:forEach var="item" items="${['Dashboard','Log meal','Daily','Weekly']}"><c:set var="route" value="${item=='Dashboard'?'dashboard':item=='Log meal'?'log':item=='Daily'?'daily':'weekly'}"/><a class="${path== '/'.concat(route)?'active':''}" href="${pageContext.request.contextPath}/${route}">${item}</a></c:forEach>
+<c:if test="${sessionScope.user.admin}"><a class="${path=='/admin'?'active':''}" href="${pageContext.request.contextPath}/admin">Administration</a></c:if>
+</nav>
+<form class="logout" action="${pageContext.request.contextPath}/logout" method="post"><input type="hidden" name="csrf" value="${sessionScope.csrf}"><button class="text-button">Logout</button></form></aside>
+<main><header><h1>${title}</h1><div class="identity"><strong><c:out value="${sessionScope.user.name}"/></strong><span>${today}</span></div></header><div class="content">
+<c:if test="${not empty flash}"><div class="notice" role="status"><c:out value="${flash}"/></div></c:if>

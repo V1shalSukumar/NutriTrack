@@ -1,0 +1,4 @@
+# Copy this file to database.properties and enter the password for your local MySQL user.
+url=jdbc:mysql://localhost:3306/nutritrack?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+username=root
+password=replace-with-your-mysql-password

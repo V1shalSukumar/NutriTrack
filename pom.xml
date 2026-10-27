@@ -1,0 +1,26 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion><groupId>com.nutritrack</groupId><artifactId>nutritrack</artifactId><version>1.0.0</version><packaging>war</packaging>
+  <properties><maven.compiler.release>17</maven.compiler.release><project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><tomcat.version>9.0.123</tomcat.version></properties>
+  <dependencies>
+    <dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-core</artifactId><version>${tomcat.version}</version></dependency>
+    <dependency><groupId>org.apache.tomcat.embed</groupId><artifactId>tomcat-embed-jasper</artifactId><version>${tomcat.version}</version></dependency>
+    <dependency><groupId>javax.servlet</groupId><artifactId>jstl</artifactId><version>1.2</version></dependency>
+    <dependency><groupId>com.mysql</groupId><artifactId>mysql-connector-j</artifactId><version>26.10.0</version>
+      <exclusions>
+        <exclusion><groupId>com.google.protobuf</groupId><artifactId>protobuf-java</artifactId></exclusion>
+        <exclusion><groupId>com.oracle.oci.sdk</groupId><artifactId>oci-java-sdk-common</artifactId></exclusion>
+        <exclusion><groupId>org.slf4j</groupId><artifactId>slf4j-api</artifactId></exclusion>
+      </exclusions>
+    </dependency>
+    <dependency><groupId>org.apache.commons</groupId><artifactId>commons-csv</artifactId><version>1.12.0</version></dependency>
+    <dependency><groupId>org.openjfx</groupId><artifactId>javafx-controls</artifactId><version>17.0.18</version></dependency>
+    <dependency><groupId>org.junit.jupiter</groupId><artifactId>junit-jupiter</artifactId><version>5.11.4</version><scope>test</scope></dependency>
+  </dependencies>
+  <build><finalName>nutritrack</finalName><plugins>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.13.0</version></plugin>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-surefire-plugin</artifactId><version>3.5.2</version></plugin>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-war-plugin</artifactId><version>3.4.0</version><configuration><failOnMissingWebXml>false</failOnMissingWebXml><packagingExcludes>WEB-INF/lib/tomcat-*.jar,WEB-INF/lib/javafx-*.jar</packagingExcludes></configuration></plugin>
+    <plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-dependency-plugin</artifactId><version>3.8.1</version></plugin>
+    <plugin><groupId>org.openjfx</groupId><artifactId>javafx-maven-plugin</artifactId><version>0.0.8</version><configuration><mainClass>com.nutritrack.desktop.ReviewApp</mainClass></configuration></plugin>
+  </plugins></build>
+</project>
